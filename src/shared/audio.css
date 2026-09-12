@@ -1,0 +1,71 @@
+/* src/shared/audio.css */
+
+#birthday-music-controls {
+  position: fixed;
+  top: 50%;
+  right: 14px;
+  transform: translateY(-50%);
+  z-index: 99999;
+
+  display: flex;
+  flex-direction: column;
+
+  width: 52px;
+  overflow: hidden;
+
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  border-radius: 14px;
+  background: rgba(15, 15, 25, 0.72);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.3);
+}
+
+#birthday-music-controls .music-control {
+  width: 52px;
+  height: 52px;
+  padding: 0;
+
+  border: 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.16);
+  background: transparent;
+
+  color: white;
+  font-size: 22px;
+  line-height: 1;
+
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+
+  transition: background 0.18s ease, transform 0.18s ease;
+}
+
+#birthday-music-controls .music-control:last-child {
+  border-bottom: 0;
+}
+
+#birthday-music-controls .music-control:hover {
+  background: rgba(255, 255, 255, 0.14);
+}
+
+#birthday-music-controls .music-control:active {
+  transform: scale(0.92);
+}
+
+@media (max-width: 600px) {
+  #birthday-music-controls {
+    right: 8px;
+    top: 120px;
+    transform: none;
+
+    width: 46px;
+    border-radius: 12px;
+  }
+
+  #birthday-music-controls .music-control {
+    width: 46px;
+    height: 46px;
+    font-size: 19px;
+  }
+}

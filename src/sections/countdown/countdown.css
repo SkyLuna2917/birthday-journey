@@ -1,0 +1,276 @@
+/* =========================================
+   COUNTDOWN SECTION
+========================================= */
+
+.countdown-container {
+    position: absolute;
+    z-index: 20;
+
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    width: min(90vw, 760px);
+    box-sizing: border-box;
+
+    pointer-events: none;
+}
+
+.countdown-box {
+    width: 100%;
+    box-sizing: border-box;
+
+    padding: 28px 30px 30px;
+
+    border: 1px solid rgba(220, 235, 210, 0.45);
+    border-radius: 22px;
+
+    background: rgba(15, 35, 22, 0.72);
+
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+
+    text-align: center;
+
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.35),
+        inset 0 1px 0 rgba(255, 255, 255, 0.12);
+}
+
+
+/* =========================================
+   SPECIAL DAY MESSAGE
+========================================= */
+
+.special-day-message {
+    width: 100%;
+    box-sizing: border-box;
+
+    margin: 0 auto 18px;
+
+    padding: 0 8px;
+
+    color: #ffffff;
+
+    font-size: clamp(14px, 4.5vw, 18px);
+    line-height: 1.25;
+
+    white-space: normal;
+    overflow-wrap: break-word;
+    word-break: normal;
+}
+
+
+/* =========================================
+   COUNTDOWN VALUES
+========================================= */
+
+.countdown-values {
+    display: grid;
+
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+
+    gap: 18px;
+
+    width: 100%;
+}
+
+
+.countdown-values > div {
+    min-width: 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.countdown-values strong {
+    width: 100%;
+    max-width: 105px;
+    aspect-ratio: 1 / 0.72;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    box-sizing: border-box;
+
+    border-radius: 12px;
+
+    background: rgba(30, 60, 35, 0.88);
+
+    border: 1px solid rgba(190, 220, 180, 0.45);
+
+    color: #ffffff;
+
+    font-family: Georgia, serif;
+
+    font-size: clamp(24px, 4vw, 42px);
+
+    text-shadow:
+        0 2px 8px rgba(0, 0, 0, 0.6);
+
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.1),
+        0 5px 15px rgba(0, 0, 0, 0.25);
+}
+
+
+.countdown-values span {
+    margin-top: 8px;
+
+    color: rgba(255, 255, 255, 0.9);
+
+    font-family: Georgia, serif;
+
+    font-size: 11px;
+    font-weight: 700;
+
+    letter-spacing: 0.8px;
+}
+
+
+/* =========================================
+   LIFE COUNTDOWN
+========================================= */
+
+.countdown-container.life-countdown {
+    width: min(94vw, 1000px);
+}
+
+.life-countdown .countdown-values {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+}
+
+.life-countdown .special-day-message {
+    font-size: clamp(20px, 3vw, 32px);
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+    .countdown-container {
+        width: calc(100vw - 24px);
+        max-width: 390px;
+    }
+
+    .countdown-box {
+        padding: 22px 12px 24px;
+        border-radius: 18px;
+    }
+
+    .special-day-message {
+        margin-bottom: 18px;
+
+        font-size: 17px;
+
+        white-space: nowrap;
+    }
+
+    .countdown-values {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 8px;
+    }
+
+    .countdown-values strong {
+        width: 100%;
+        max-width: 72px;
+
+        border-radius: 9px;
+
+        font-size: clamp(19px, 6vw, 28px);
+    }
+
+    .countdown-values span {
+        margin-top: 5px;
+        font-size: 8px;
+        letter-spacing: 0.3px;
+    }
+
+
+    /* Life counter becomes 3 x 2 */
+    .life-countdown .countdown-values {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 10px;
+    }
+
+    .life-countdown .countdown-values strong {
+        max-width: 80px;
+    }
+
+}
+
+
+/* =========================================
+   VERY SMALL PHONES
+========================================= */
+
+@media (max-width: 360px) {
+
+    .countdown-container {
+        width: calc(100vw - 16px);
+    }
+
+    .countdown-box {
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+
+    .countdown-values {
+        gap: 5px;
+    }
+
+    .countdown-values strong {
+        font-size: 18px;
+    }
+
+    .countdown-values span {
+        font-size: 7px;
+    }
+
+    .special-day-message {
+        font-size: 15px;
+    }
+}
+
+
+/* =========================================
+   LANDSCAPE PHONE
+========================================= */
+
+@media (max-height: 500px) and (orientation: landscape) {
+
+    .countdown-container {
+        top: 52%;
+        width: min(82vw, 700px);
+    }
+
+    .countdown-box {
+        padding: 14px 20px 18px;
+    }
+
+    .special-day-message {
+        margin-bottom: 12px;
+        font-size: 16px;
+    }
+
+    .countdown-values {
+        gap: 10px;
+    }
+
+    .countdown-values strong {
+        max-width: 70px;
+        font-size: 22px;
+    }
+
+    .countdown-values span {
+        margin-top: 4px;
+        font-size: 8px;
+    }
+}

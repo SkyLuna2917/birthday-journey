@@ -1,0 +1,1872 @@
+/* ============================================================
+   BIRTHDAY JOURNEY — SECTION 01 HOME
+   FULL RESPONSIVE CSS
+   Mobile • Tablet • Laptop • Desktop • Ultra-wide
+   ============================================================ */
+
+
+/* ============================================================
+   GLOBAL FOUNDATION
+   ============================================================ */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#app {
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+button,
+a,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+img,
+video,
+canvas {
+  max-width: 100%;
+}
+
+
+/* ============================================================
+   MAIN BIRTHDAY WORLD
+   ============================================================ */
+
+.birthday-world {
+  position: relative;
+
+  width: 100%;
+  min-width: 0;
+
+  height: 100vh;
+  height: 100svh;
+  height: 100dvh;
+
+  min-height: 480px;
+
+  overflow: hidden;
+
+  isolation: isolate;
+
+  background: transparent;
+}
+
+
+/* ============================================================
+   BACKGROUND IMAGE
+   ============================================================ */
+
+.scene-background {
+  position: absolute;
+
+  inset: -5%;
+
+  z-index: -5;
+
+  background-image: url("/assets/nature.png");
+
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  animation:
+    natureBreath 18s ease-in-out infinite alternate;
+
+  will-change: transform;
+}
+
+
+@keyframes natureBreath {
+
+  from {
+    transform: scale(1.04);
+  }
+
+  to {
+    transform: scale(1.10);
+  }
+}
+
+
+/* ============================================================
+   BACKGROUND OVERLAY
+   ============================================================ */
+
+.scene-overlay {
+  position: absolute;
+
+  inset: 0;
+
+  z-index: -4;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.34) 0%,
+      rgba(0, 0, 0, 0.04) 35%,
+      rgba(0, 0, 0, 0.18) 60%,
+      rgba(0, 0, 0, 0.68) 100%
+    );
+
+  pointer-events: none;
+}
+
+
+/* ============================================================
+   AMBIENT GLOW
+   ============================================================ */
+
+.ambient-glow {
+  position: absolute;
+
+  width: clamp(220px, 35vw, 650px);
+  height: clamp(220px, 35vw, 650px);
+
+  border-radius: 50%;
+
+  filter: blur(80px);
+
+  opacity: 0.12;
+
+  pointer-events: none;
+
+  z-index: -1;
+}
+
+
+.glow-one {
+  top: 10%;
+  left: 15%;
+
+  background: rgba(255, 255, 255, 0.5);
+
+  animation:
+    floatOne 12s ease-in-out infinite alternate;
+}
+
+
+.glow-two {
+  right: 10%;
+  bottom: 5%;
+
+  background: rgba(180, 160, 220, 0.4);
+
+  animation:
+    floatTwo 15s ease-in-out infinite alternate;
+}
+
+
+@keyframes floatOne {
+
+  to {
+    transform:
+      translate(40px, 30px)
+      scale(1.2);
+  }
+}
+
+
+@keyframes floatTwo {
+
+  to {
+    transform:
+      translate(-35px, -25px)
+      scale(1.15);
+  }
+}
+
+
+/* ============================================================
+   STARS / ATMOSPHERE
+   ============================================================ */
+
+.stars {
+  position: absolute;
+
+  inset: 0;
+
+  z-index: -2;
+
+  opacity: 0.28;
+
+  background-image:
+    radial-gradient(
+      circle,
+      rgba(255, 255, 255, 0.8) 1px,
+      transparent 1.5px
+    );
+
+  background-size: 120px 120px;
+
+  background-position: 20px 30px;
+
+  animation:
+    starsMove 25s linear infinite;
+
+  pointer-events: none;
+}
+
+
+@keyframes starsMove {
+
+  to {
+    transform: translateY(-120px);
+  }
+}
+
+
+/* ============================================================
+   HERO CONTENT
+   ============================================================ */
+
+.hero-content {
+  position: absolute;
+
+  top: 50%;
+  left: 50%;
+
+  transform:
+    translate(-50%, -50%);
+
+  width: min(90%, 850px);
+
+  text-align: center;
+
+  z-index: 3;
+
+  pointer-events: none;
+
+  animation:
+    heroAppear
+    1.4s
+    cubic-bezier(.22, 1, .36, 1)
+    both;
+}
+
+
+@keyframes heroAppear {
+
+  from {
+
+    opacity: 0;
+
+    transform:
+      translate(-50%, -45%)
+      scale(0.96);
+
+    filter: blur(10px);
+  }
+
+  to {
+
+    opacity: 1;
+
+    transform:
+      translate(-50%, -50%)
+      scale(1);
+
+    filter: blur(0);
+  }
+}
+
+
+/* ============================================================
+   HERO SMALL TITLE
+   ============================================================ */
+
+.eyebrow {
+
+  margin: 0 0 clamp(12px, 2vh, 20px);
+
+  color:
+    rgba(230, 238, 215, 0.75);
+
+  font-size:
+    clamp(8px, 0.75vw, 12px);
+
+  letter-spacing:
+    clamp(0.18em, 0.34em, 0.4em);
+
+  line-height: 1.3;
+}
+
+
+/* ============================================================
+   MAIN TITLE
+   ============================================================ */
+
+.hero-content h1 {
+
+  margin: 0;
+
+  max-width: 100%;
+
+  color: #ffffff;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size:
+    clamp(
+      2.5rem,
+      8vw,
+      7rem
+    );
+
+  font-weight: 400;
+
+  line-height: 1.02;
+
+  overflow-wrap: break-word;
+
+  text-shadow:
+    0 10px 40px
+    rgba(0, 0, 0, 0.5);
+}
+
+
+/* ============================================================
+   HERO MESSAGE
+   ============================================================ */
+
+.hero-message {
+
+  width: min(90%, 650px);
+
+  margin:
+    clamp(16px, 3vh, 28px)
+    auto 0;
+
+  color: #e5f1e8;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size:
+    clamp(
+      13px,
+      2vw,
+      24px
+    );
+
+  line-height: 1.55;
+
+  font-style: italic;
+
+  text-shadow:
+    0 3px 15px
+    rgba(0, 0, 0, 0.5);
+}
+
+
+/* ============================================================
+   ============================================================
+   RESPONSIVE BUTTON SYSTEM
+   ============================================================
+   ============================================================ */
+
+
+/*
+   IMPORTANT
+
+   Instead of placing buttons with fixed pixel positions,
+   the buttons now use a responsive GRID.
+
+   3 columns:
+
+   LEFT       CENTER       RIGHT
+
+   Language   Album        Message
+   Theme                   Music
+
+   Quiz                    Invite
+   Game       Puzzle       Calendar
+*/
+
+
+.button-layer {
+
+  position: absolute;
+
+  inset: 0;
+
+  z-index: 20;
+
+  pointer-events: none;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(110px, 1fr)
+    minmax(140px, 1.25fr)
+    minmax(110px, 1fr);
+
+  grid-template-rows:
+    auto
+    auto
+    1fr
+    auto
+    auto;
+
+  column-gap:
+    clamp(8px, 2vw, 30px);
+
+  row-gap:
+    clamp(8px, 1.5vh, 18px);
+
+  padding-top:
+    max(
+      12px,
+      env(safe-area-inset-top)
+    );
+
+  padding-right:
+    max(
+      12px,
+      env(safe-area-inset-right)
+    );
+
+  padding-bottom:
+    max(
+      12px,
+      env(safe-area-inset-bottom)
+    );
+
+  padding-left:
+    max(
+      12px,
+      env(safe-area-inset-left)
+    );
+
+  align-items: start;
+}
+
+
+/* ============================================================
+   ALL BUTTONS
+   ============================================================ */
+
+.journey-btn {
+
+  position: relative;
+
+  width: 100%;
+
+  min-width: 0;
+
+  min-height:
+    clamp(
+      42px,
+      5vw,
+      60px
+    );
+
+  padding:
+    clamp(8px, 1vw, 14px)
+    clamp(8px, 1.2vw, 18px);
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border:
+    1px solid
+    rgba(230, 238, 215, 0.55);
+
+  border-radius:
+    clamp(8px, 0.8vw, 12px);
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(25, 48, 28, 0.82),
+      rgba(45, 65, 35, 0.66)
+    );
+
+  backdrop-filter: blur(10px);
+
+  -webkit-backdrop-filter: blur(10px);
+
+  color: #f5f1df;
+
+  font-size:
+    clamp(
+      9px,
+      1vw,
+      14px
+    );
+
+  font-weight: 600;
+
+  letter-spacing:
+    clamp(
+      0.01em,
+      0.04em,
+      0.06em
+    );
+
+  line-height: 1.2;
+
+  text-align: center;
+
+  white-space: normal;
+
+  overflow-wrap: anywhere;
+
+  box-shadow:
+    0 6px 20px
+    rgba(0, 0, 0, 0.25),
+
+    inset 0 1px 0
+    rgba(255, 255, 255, 0.12);
+
+  pointer-events: auto;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+
+  z-index: 30;
+}
+
+
+/* ============================================================
+   BUTTON HOVER
+   ============================================================ */
+
+.journey-btn:hover {
+
+  transform:
+    translateY(-3px);
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(48, 82, 48, 0.92),
+      rgba(70, 91, 48, 0.80)
+    );
+
+  border-color:
+    rgba(235, 240, 215, 0.9);
+
+  box-shadow:
+    0 10px 28px
+    rgba(0, 0, 0, 0.32),
+
+    0 0 18px
+    rgba(180, 205, 140, 0.18);
+}
+
+
+.journey-btn:active {
+
+  transform:
+    scale(0.97);
+}
+
+
+/* ============================================================
+   TOP ROW
+   ============================================================ */
+
+
+/* Language */
+
+.language-btn {
+
+  grid-column: 1;
+
+  grid-row: 1;
+
+  justify-self: start;
+
+  width:
+    min(
+      100%,
+      clamp(110px, 12vw, 180px)
+    );
+}
+
+
+/* Memory Album */
+
+.memory-album-btn {
+
+  grid-column: 2;
+
+  grid-row: 1;
+
+  justify-self: center;
+
+  width:
+    min(
+      100%,
+      clamp(145px, 18vw, 240px)
+    );
+}
+
+
+/* Congratulatory Message */
+
+.congratulatory-btn {
+
+  grid-column: 3;
+
+  grid-row: 1;
+
+  justify-self: end;
+
+  width:
+    min(
+      100%,
+      clamp(125px, 17vw, 250px)
+    );
+}
+
+
+/* ============================================================
+   SECOND ROW
+   ============================================================ */
+
+
+/* Theme */
+
+.theme-btn {
+
+  grid-column: 1;
+
+  grid-row: 2;
+
+  justify-self: start;
+
+  width:
+    min(
+      100%,
+      clamp(105px, 12vw, 180px)
+    );
+}
+
+
+/* Music */
+
+.music-btn {
+
+  grid-column: 3;
+
+  grid-row: 2;
+
+  justify-self: end;
+
+  width:
+    min(
+      100%,
+      clamp(90px, 12vw, 170px)
+    );
+}
+
+
+/* ============================================================
+   MIDDLE SPACE
+   ============================================================ */
+
+.button-layer::before {
+
+  content: "";
+
+  grid-column: 1 / 4;
+
+  grid-row: 3;
+
+  pointer-events: none;
+}
+
+
+/* ============================================================
+   QUIZ
+   ============================================================ */
+
+.quiz-btn {
+
+  grid-column: 1;
+
+  grid-row: 4;
+
+  justify-self: start;
+
+  width:
+    min(
+      100%,
+      clamp(105px, 13vw, 180px)
+    );
+}
+
+
+/* ============================================================
+   INVITE FRIENDS
+   ============================================================ */
+
+.invite-btn {
+
+  grid-column: 3;
+
+  grid-row: 4;
+
+  justify-self: end;
+
+  width:
+    min(
+      100%,
+      clamp(105px, 13vw, 180px)
+    );
+}
+
+
+/* ============================================================
+   BOTTOM ROW
+   ============================================================ */
+
+
+/* Memory Game */
+
+.memory-game-btn {
+
+  grid-column: 1;
+
+  grid-row: 5;
+
+  justify-self: start;
+
+  width:
+    min(
+      100%,
+      clamp(115px, 14vw, 190px)
+    );
+}
+
+
+/* Puzzle */
+
+.puzzle-btn {
+
+  grid-column: 2;
+
+  grid-row: 5;
+
+  justify-self: center;
+
+  width:
+    min(
+      100%,
+      clamp(85px, 11vw, 150px)
+    );
+}
+
+
+/* Birthday Calendar */
+
+.calendar-btn {
+
+  grid-column: 3;
+
+  grid-row: 5;
+
+  justify-self: end;
+
+  width:
+    min(
+      100%,
+      clamp(120px, 16vw, 210px)
+    );
+}
+
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+
+.scene-footer {
+
+  position: absolute;
+
+  left: 50%;
+
+  bottom:
+    max(
+      18px,
+      env(safe-area-inset-bottom)
+    );
+
+  transform:
+    translateX(-50%);
+
+  width:
+    min(90%, 420px);
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  font-size: 8px;
+
+  letter-spacing: 0.2em;
+
+  opacity: 0.35;
+
+  z-index: 2;
+
+  pointer-events: none;
+}
+
+
+.footer-line {
+
+  flex: 1;
+
+  height: 1px;
+
+  background:
+    rgba(255, 255, 255, 0.25);
+}
+
+
+/* ============================================================
+   CONNECTOR TOAST
+   ============================================================ */
+
+.connector-toast {
+
+  position: fixed;
+
+  left: 50%;
+
+  bottom:
+    calc(
+      100px +
+      env(safe-area-inset-bottom)
+    );
+
+  transform:
+    translate(-50%, 15px);
+
+  width:
+    min(92vw, 520px);
+
+  max-width: calc(100vw - 24px);
+
+  padding:
+    12px 16px;
+
+  border:
+    1px solid
+    rgba(230, 238, 215, 0.35);
+
+  border-radius: 12px;
+
+  background:
+    rgba(10, 20, 12, 0.82);
+
+  backdrop-filter: blur(12px);
+
+  -webkit-backdrop-filter: blur(12px);
+
+  color: #f5f1df;
+
+  text-align: center;
+
+  font-size: 12px;
+
+  line-height: 1.45;
+
+  opacity: 0;
+
+  visibility: hidden;
+
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease,
+    visibility 0.25s ease;
+
+  z-index: 100;
+}
+
+
+.connector-toast.show {
+
+  opacity: 1;
+
+  visibility: visible;
+
+  transform:
+    translate(-50%, 0);
+}
+
+
+/* ============================================================
+   WIND / FALLING LEAVES
+   ============================================================ */
+
+.wind-layer {
+
+  position: absolute;
+
+  inset: 0;
+
+  overflow: hidden;
+
+  z-index: 2;
+
+  pointer-events: none;
+}
+
+
+.wind-leaf {
+
+  position: absolute;
+
+  width: var(--size);
+
+  height:
+    calc(
+      var(--size) * 0.55
+    );
+
+  left: -12%;
+
+  top: var(--top);
+
+  opacity: var(--opacity);
+
+  border-radius:
+    100% 0 100% 0;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(30, 55, 18, 0.95),
+      rgba(8, 20, 7, 0.95)
+    );
+
+  filter:
+    blur(var(--blur));
+
+  transform:
+    rotate(var(--rotation));
+
+  animation:
+    windAcross
+    var(--duration)
+    linear
+    var(--delay)
+    infinite;
+}
+
+
+@keyframes windAcross {
+
+  0% {
+
+    transform:
+      translate3d(-15vw, 20px, 0)
+      rotate(0deg)
+      scale(0.8);
+
+    opacity: 0;
+  }
+
+
+  8% {
+
+    opacity:
+      var(--opacity);
+  }
+
+
+  30% {
+
+    transform:
+      translate3d(25vw, -25px, 0)
+      rotate(120deg)
+      scale(1);
+  }
+
+
+  55% {
+
+    transform:
+      translate3d(55vw, 30px, 0)
+      rotate(230deg)
+      scale(0.9);
+  }
+
+
+  80% {
+
+    transform:
+      translate3d(85vw, -15px, 0)
+      rotate(340deg)
+      scale(1.05);
+  }
+
+
+  100% {
+
+    transform:
+      translate3d(120vw, 35px, 0)
+      rotate(460deg)
+      scale(0.8);
+
+    opacity: 0;
+  }
+}
+
+
+/* ============================================================
+   LARGE DESKTOP
+   1201px+
+   ============================================================ */
+
+@media screen and (min-width: 1201px) {
+
+  .button-layer {
+
+    padding-top:
+      max(
+        14px,
+        env(safe-area-inset-top)
+      );
+
+    padding-right:
+      max(
+        18px,
+        env(safe-area-inset-right)
+      );
+
+    padding-left:
+      max(
+        18px,
+        env(safe-area-inset-left)
+      );
+
+    padding-bottom:
+      max(
+        18px,
+        env(safe-area-inset-bottom)
+      );
+
+    column-gap:
+      clamp(20px, 3vw, 55px);
+  }
+
+
+  .journey-btn {
+
+    min-height: 52px;
+
+    font-size:
+      clamp(
+        11px,
+        0.85vw,
+        14px
+      );
+  }
+}
+
+
+/* ============================================================
+   ULTRA-WIDE DESKTOP
+   1800px+
+   ============================================================ */
+
+@media screen and (min-width: 1800px) {
+
+  .button-layer {
+
+    padding-left:
+      max(
+        30px,
+        env(safe-area-inset-left)
+      );
+
+    padding-right:
+      max(
+        30px,
+        env(safe-area-inset-right)
+      );
+
+    column-gap: 70px;
+  }
+
+
+  .journey-btn {
+
+    min-height: 58px;
+
+    font-size: 14px;
+  }
+}
+
+
+/* ============================================================
+   TABLET LANDSCAPE
+   901px — 1200px
+   ============================================================ */
+
+@media screen
+and (min-width: 901px)
+and (max-width: 1200px) {
+
+  .button-layer {
+
+    grid-template-columns:
+      minmax(110px, 1fr)
+      minmax(130px, 1.2fr)
+      minmax(110px, 1fr);
+
+    column-gap: 18px;
+  }
+
+
+  .journey-btn {
+
+    min-height: 48px;
+
+    font-size: 11px;
+
+    padding:
+      8px 10px;
+  }
+
+
+  .hero-content {
+
+    width: min(82%, 750px);
+  }
+}
+
+
+/* ============================================================
+   TABLET PORTRAIT
+   601px — 900px
+   ============================================================ */
+
+@media screen
+and (min-width: 601px)
+and (max-width: 900px) {
+
+  .birthday-world {
+
+    min-height: 600px;
+  }
+
+
+  .button-layer {
+
+    grid-template-columns:
+      minmax(105px, 1fr)
+      minmax(125px, 1.15fr)
+      minmax(105px, 1fr);
+
+    column-gap: 12px;
+
+    row-gap: 10px;
+
+    padding:
+      14px;
+  }
+
+
+  .journey-btn {
+
+    min-height: 46px;
+
+    font-size: 10px;
+
+    padding:
+      8px 9px;
+  }
+
+
+  .memory-album-btn {
+
+    width:
+      min(100%, 180px);
+  }
+
+
+  .congratulatory-btn {
+
+    width:
+      min(100%, 190px);
+  }
+
+
+  .hero-content {
+
+    width: 78%;
+  }
+
+
+  .hero-content h1 {
+
+    font-size:
+      clamp(
+        3rem,
+        8vw,
+        5rem
+      );
+  }
+
+
+  .hero-message {
+
+    font-size: 17px;
+  }
+}
+
+
+/* ============================================================
+   PHONE
+   381px — 600px
+   ============================================================ */
+
+@media screen
+and (min-width: 381px)
+and (max-width: 600px) {
+
+  .birthday-world {
+
+    min-height: 600px;
+  }
+
+
+  .button-layer {
+
+    grid-template-columns:
+      minmax(0, 1fr)
+      minmax(0, 1.1fr)
+      minmax(0, 1fr);
+
+    grid-template-rows:
+      auto
+      auto
+      1fr
+      auto
+      auto;
+
+    column-gap: 8px;
+
+    row-gap: 8px;
+
+    padding:
+      10px;
+  }
+
+
+  .journey-btn {
+
+    min-height: 40px;
+
+    padding:
+      7px 6px;
+
+    font-size:
+      clamp(
+        8px,
+        2.6vw,
+        11px
+      );
+
+    border-radius: 8px;
+
+    letter-spacing: 0;
+  }
+
+
+  .language-btn {
+
+    width: 100%;
+  }
+
+
+  .memory-album-btn {
+
+    width: 100%;
+  }
+
+
+  .congratulatory-btn {
+
+    width: 100%;
+
+    max-width: 130px;
+
+    justify-self: end;
+  }
+
+
+  .theme-btn {
+
+    width: 100%;
+  }
+
+
+  .music-btn {
+
+    width: 100%;
+
+    max-width: 100px;
+
+    justify-self: end;
+  }
+
+
+  .quiz-btn {
+
+    width: 100%;
+  }
+
+
+  .invite-btn {
+
+    width: 100%;
+  }
+
+
+  .memory-game-btn {
+
+    width: 100%;
+  }
+
+
+  .puzzle-btn {
+
+    width: 100%;
+    max-width: 85px;
+  }
+
+
+  .calendar-btn {
+
+    width: 100%;
+  }
+
+
+  .hero-content {
+
+    width: 82%;
+  }
+
+
+  .eyebrow {
+
+    font-size: 8px;
+
+    letter-spacing: 0.2em;
+
+    margin-bottom: 12px;
+  }
+
+
+  .hero-content h1 {
+
+    font-size:
+      clamp(
+        2.5rem,
+        13vw,
+        4rem
+      );
+
+    line-height: 1.03;
+  }
+
+
+  .hero-message {
+
+    width: 95%;
+
+    margin-top: 18px;
+
+    font-size:
+      clamp(
+        13px,
+        3.8vw,
+        16px
+      );
+
+    line-height: 1.5;
+  }
+
+
+  .scene-footer {
+
+    display: none;
+  }
+
+
+  .connector-toast {
+
+    bottom:
+      calc(
+        90px +
+        env(safe-area-inset-bottom)
+      );
+
+    font-size: 11px;
+  }
+
+
+  .ambient-glow {
+
+    filter: blur(60px);
+  }
+}
+
+
+/* ============================================================
+   SMALL PHONE
+   380px AND BELOW
+   ============================================================ */
+
+@media screen and (max-width: 380px) {
+
+  .birthday-world {
+
+    min-height: 540px;
+  }
+
+
+  .button-layer {
+
+    grid-template-columns:
+      minmax(0, 1fr)
+      minmax(0, 1.05fr)
+      minmax(0, 1fr);
+
+    column-gap: 5px;
+
+    row-gap: 6px;
+
+    padding:
+      7px;
+  }
+
+
+  .journey-btn {
+
+    min-height: 36px;
+
+    padding:
+      6px 4px;
+
+    font-size:
+      clamp(
+        7px,
+        2.7vw,
+        9px
+      );
+
+    border-radius: 7px;
+  }
+
+
+  .congratulatory-btn {
+
+    max-width: 115px;
+  }
+
+
+  .music-btn {
+
+    max-width: 82px;
+  }
+
+
+  .puzzle-btn {
+
+    max-width: 75px;
+  }
+
+
+  .hero-content {
+
+    width: 86%;
+  }
+
+
+  .eyebrow {
+
+    font-size: 7px;
+
+    letter-spacing: 0.16em;
+
+    margin-bottom: 10px;
+  }
+
+
+  .hero-content h1 {
+
+    font-size:
+      clamp(
+        2.2rem,
+        14vw,
+        3.2rem
+      );
+  }
+
+
+  .hero-message {
+
+    width: 96%;
+
+    margin-top: 15px;
+
+    font-size: 12px;
+
+    line-height: 1.45;
+  }
+
+
+  .scene-footer {
+
+    display: none;
+  }
+}
+
+
+/* ============================================================
+   LANDSCAPE PHONES
+   ============================================================ */
+
+@media screen
+and (max-height: 600px)
+and (orientation: landscape) {
+
+  .birthday-world {
+
+    min-height: 420px;
+
+    overflow-y: auto;
+  }
+
+
+  .button-layer {
+
+    grid-template-rows:
+      auto
+      auto
+      1fr
+      auto
+      auto;
+
+    row-gap: 5px;
+
+    padding:
+      7px 10px;
+  }
+
+
+  .journey-btn {
+
+    min-height: 34px;
+
+    padding:
+      5px 8px;
+
+    font-size: 9px;
+  }
+
+
+  .hero-content {
+
+    width: 55%;
+
+    transform:
+      translate(-50%, -50%)
+      scale(0.75);
+  }
+
+
+  .hero-content h1 {
+
+    font-size: 4rem;
+  }
+
+
+  .hero-message {
+
+    margin-top: 12px;
+
+    font-size: 14px;
+  }
+
+
+  .scene-footer {
+
+    display: none;
+  }
+}
+
+
+/* ============================================================
+   LANDSCAPE TABLETS / SHORT LAPTOPS
+   ============================================================ */
+
+@media screen
+and (min-width: 601px)
+and (max-height: 650px)
+and (orientation: landscape) {
+
+  .birthday-world {
+
+    min-height: 500px;
+  }
+
+
+  .button-layer {
+
+    row-gap: 6px;
+  }
+
+
+  .journey-btn {
+
+    min-height: 38px;
+
+    font-size: 10px;
+  }
+
+
+  .hero-content {
+
+    transform:
+      translate(-50%, -50%)
+      scale(0.82);
+  }
+
+
+  .scene-footer {
+
+    display: none;
+  }
+}
+
+
+/* ============================================================
+   VERY SHORT DESKTOP SCREENS
+   ============================================================ */
+
+@media screen
+and (min-width: 1000px)
+and (max-height: 600px) {
+
+  .button-layer {
+
+    row-gap: 5px;
+
+    padding-top: 8px;
+
+    padding-bottom: 8px;
+  }
+
+
+  .journey-btn {
+
+    min-height: 38px;
+
+    padding:
+      6px 12px;
+
+    font-size: 10px;
+  }
+
+
+  .hero-content {
+
+    transform:
+      translate(-50%, -50%)
+      scale(0.82);
+  }
+
+
+  .scene-footer {
+
+    display: none;
+  }
+}
+
+
+/* ============================================================
+   VERY LARGE HEIGHT SCREENS
+   ============================================================ */
+
+@media screen and (min-height: 1000px) {
+
+  .button-layer {
+
+    padding-top:
+      max(
+        20px,
+        env(safe-area-inset-top)
+      );
+
+    padding-bottom:
+      max(
+        20px,
+        env(safe-area-inset-bottom)
+      );
+  }
+
+
+  .hero-message {
+
+    margin-top: 30px;
+  }
+}
+
+
+/* ============================================================
+   TOUCH DEVICES
+   ============================================================ */
+
+@media (hover: none) and (pointer: coarse) {
+
+  .journey-btn:hover {
+
+    transform: none;
+
+    box-shadow:
+      0 6px 20px
+      rgba(0, 0, 0, 0.25),
+
+      inset 0 1px 0
+      rgba(255, 255, 255, 0.12);
+  }
+
+
+  .journey-btn:active {
+
+    transform:
+      scale(0.95);
+  }
+}
+
+
+/* ============================================================
+   REDUCED MOTION
+   ============================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+
+    animation-duration:
+      0.01ms !important;
+
+    animation-iteration-count:
+      1 !important;
+
+    transition-duration:
+      0.01ms !important;
+  }
+}
+
+/* ============================================================
+   SECTION 06 — THEME VIDEO OVERRIDE
+   ============================================================ */
+
+/* When a theme is active, the original nature.png disappears. */
+.birthday-world.theme-video-active .scene-background {
+  opacity: 0 !important;
+  visibility: hidden;
+}
+
+/* Keep the existing readability overlay, but let the video show through. */
+.birthday-world.theme-video-active .scene-overlay {
+  background:
+    linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.22) 0%,
+      rgba(0, 0, 0, 0.02) 38%,
+      rgba(0, 0, 0, 0.18) 65%,
+      rgba(0, 0, 0, 0.58) 100%
+    );
+}
+
+/* The theme video sits behind every Main Page element. */
+.theme-background-video {
+  position: fixed !important;
+  inset: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  height: 100dvh !important;
+  object-fit: cover !important;
+
+  z-index: 0 !important;
+
+  display: block !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+
+  pointer-events: none !important;
+
+  background: transparent !important;
+
+  transition:
+    opacity .65s ease,
+    visibility .65s ease !important;
+}
+
+.theme-background-video.is-active {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* Remove the old selection-card UI completely. */
+.theme-selector,
+.theme-selector-card,
+.theme-selector-backdrop,
+.theme-options {
+  display: none !important;
+}
+
+/* Puzzle button below Feedback only */
+.bottom-button-row .puzzle-btn {
+  position: absolute !important;
+
+  left: 50% !important;
+
+  top: calc(100% + 8px) !important;
+
+  transform: translateX(-50%) !important;
+
+  width: 150px !important;
+
+  min-width: 150px !important;
+}

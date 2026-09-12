@@ -1,0 +1,171 @@
+* { box-sizing: border-box; }
+html, body { margin: 0; width: 100%; min-height: 100%; }
+body { min-height:100dvh; overflow:hidden; background:transparent; color: #fff; font-family: Georgia, "Times New Roman", serif; -webkit-font-smoothing: antialiased; -webkit-tap-highlight-color: transparent; }
+button { font: inherit; color: inherit; border: 0; outline: 0; cursor: pointer; touch-action: manipulation; }
+
+/* Memory Album same-page overlay */
+body.memory-album-open{overflow:hidden}.memory-album-overlay{position:fixed;inset:0;z-index:10000;display:grid;place-items:center;opacity:0;visibility:hidden;transition:.22s ease}.memory-album-overlay.is-open{opacity:1;visibility:visible}.memory-album-backdrop{position:absolute;inset:0;background:rgba(8,7,10,.16);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px)}.memory-album-window{position:relative;width:min(1180px,96vw);height:min(940px,96dvh);border:1px solid rgba(255,255,255,.22);border-radius:22px;overflow:hidden;background:rgba(8,7,10,.08);box-shadow:0 30px 80px rgba(0,0,0,.38);transform:scale(.97);transition:transform .22s ease;z-index:1}.memory-album-overlay.is-open .memory-album-window{transform:scale(1)}.memory-album-frame{width:100%;height:100%;display:block;border:0;background:transparent}.memory-album-close{position:absolute;top:10px;right:10px;z-index:3;width:40px;height:40px;border:1px solid rgba(255,255,255,.3);border-radius:50%;background:rgba(30,20,15,.72);color:#fff;font-size:28px;line-height:1;cursor:pointer;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}.memory-album-close:hover{background:rgba(255,185,60,.9)}@media(max-width:600px){.memory-album-window{width:100vw;height:100dvh;border-radius:0;border:0}.memory-album-close{top:8px;right:8px;width:36px;height:36px;font-size:25px}}
+
+/* MEMORY ALBUM SAME-PAGE OVERLAY */
+body.memory-album-open{overflow:hidden}.memory-album-overlay{position:fixed;inset:0;z-index:10000;display:grid;place-items:center;opacity:0;visibility:hidden;transition:opacity .22s ease,visibility .22s ease}.memory-album-overlay.is-open{opacity:1;visibility:visible}.memory-album-backdrop{position:absolute;inset:0;background:rgba(8,7,10,.16);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px)}.memory-album-window{position:relative;width:min(1180px,96vw);height:min(940px,96dvh);border:1px solid rgba(255,255,255,.22);border-radius:22px;overflow:hidden;background:rgba(8,7,10,.08);box-shadow:0 30px 80px rgba(0,0,0,.38);transform:scale(.97);transition:transform .22s ease;z-index:1}.memory-album-overlay.is-open .memory-album-window{transform:scale(1)}.memory-album-frame{width:100%;height:100%;display:block;border:0;background:transparent}.memory-album-close{position:absolute;top:10px;right:10px;z-index:3;width:40px;height:40px;border:1px solid rgba(255,255,255,.3);border-radius:50%;background:rgba(30,20,15,.72);color:#fff;font-size:28px;line-height:1;cursor:pointer;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}.memory-album-close:hover{background:rgba(255,185,60,.9)}@media(max-width:600px){.memory-album-window{width:100vw;height:100dvh;border-radius:0;border:0}.memory-album-close{top:8px;right:8px;width:36px;height:36px;font-size:25px}}
+
+
+/* Section 05 — Congratulatory Message: same-page overlay */
+body.congratulatory-open{overflow:hidden}
+.congratulatory-overlay{position:fixed;inset:0;z-index:11000;display:grid;place-items:center;opacity:0;visibility:hidden;transition:opacity .22s ease,visibility .22s ease}
+.congratulatory-overlay.is-open{opacity:1;visibility:visible}
+.congratulatory-backdrop{position:absolute;inset:0;background:rgba(8,7,10,.16);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px)}
+.congratulatory-window{position:relative;width:min(900px,94vw);height:min(760px,92dvh);border:1px solid rgba(255,255,255,.22);border-radius:24px;overflow:hidden;background:transparent;box-shadow:0 30px 80px rgba(0,0,0,.38);transform:scale(.97);transition:transform .22s ease;z-index:1}
+.congratulatory-overlay.is-open .congratulatory-window{transform:scale(1)}
+.congratulatory-frame{width:100%;height:100%;display:block;border:0;background:transparent}
+.congratulatory-close{position:absolute;top:10px;right:10px;z-index:3;width:40px;height:40px;border:1px solid rgba(255,255,255,.3);border-radius:50%;background:rgba(30,20,15,.72);color:#fff;font-size:28px;line-height:1;cursor:pointer;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+.congratulatory-close:hover{background:rgba(255,185,60,.9)}
+@media(max-width:600px){.congratulatory-window{width:100vw;height:100dvh;border-radius:0;border:0}.congratulatory-close{top:8px;right:8px;width:36px;height:36px;font-size:25px}}
+
+/* Section 06 — Theme video background */
+.theme-background-video{position:fixed;inset:0;width:100%;height:100%;object-fit:cover;z-index:-20;opacity:0;pointer-events:none;background:transparent;transition:opacity .7s ease}.theme-background-video.is-active{opacity:1}#birthday-world{position:relative;z-index:1}
+.theme-selector{position:fixed;inset:0;z-index:12000;display:grid;place-items:center;padding:20px;opacity:0;visibility:hidden;transition:opacity .2s ease,visibility .2s ease}.theme-selector.show{opacity:1;visibility:visible}.theme-selector-backdrop{position:absolute;inset:0;background:rgba(8,7,10,.16);backdrop-filter:blur(5px);-webkit-backdrop-filter:blur(5px)}.theme-selector-card{position:relative;z-index:1;width:min(430px,92vw);padding:30px;border:1px solid rgba(255,255,255,.24);border-radius:24px;background:linear-gradient(145deg,rgba(75,45,27,.82),rgba(52,31,19,.76));box-shadow:0 25px 60px rgba(0,0,0,.35),inset 0 1px 0 rgba(255,255,255,.18);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);text-align:center;transform:translateY(10px) scale(.97);transition:transform .2s ease}.theme-selector.show .theme-selector-card{transform:translateY(0) scale(1)}.theme-title-icon{font-size:30px}.theme-selector-card h2{margin:0 0 8px;color:#ffe7aa;font-size:25px}.theme-selector-card p{margin:0 0 22px;color:rgba(255,255,255,.76);font-size:14px}.theme-close{position:absolute;top:10px;right:10px;width:38px;height:38px;border:1px solid rgba(255,255,255,.25);border-radius:50%;background:rgba(30,20,15,.72);color:#fff;font-size:25px;line-height:1;cursor:pointer}.theme-close:hover{background:linear-gradient(145deg,rgba(255,201,67,.92),rgba(224,112,28,.92))}.theme-options{display:grid;grid-template-columns:1fr 1fr;gap:12px}.theme-option{min-height:70px;border:1px solid rgba(255,255,255,.22);border-radius:15px;background:linear-gradient(145deg,rgba(110,75,50,.72),rgba(62,40,26,.72));color:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:9px;font-weight:700;transition:.15s ease;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}.theme-option:hover,.theme-option.active{transform:translateY(-2px);background:linear-gradient(145deg,rgba(255,201,67,.9),rgba(224,112,28,.9));border-color:rgba(255,255,255,.42)}.theme-icon{font-size:20px}@media(max-width:500px){.theme-selector-card{padding:26px 18px}.theme-options{grid-template-columns:1fr}}
+
+
+/* =========================================================
+   MOBILE BEST EXPERIENCE POPUP
+   ========================================================= */
+
+.experience-popup {
+  display: none;
+}
+
+/* Mobile / small screens only */
+@media (max-width: 700px) {
+
+  .experience-popup {
+    position: fixed;
+    inset: 0;
+    z-index: 999999;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 22px;
+
+    background: rgba(0, 0, 0, 0.42);
+
+    backdrop-filter: blur(7px);
+    -webkit-backdrop-filter: blur(7px);
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition:
+      opacity 0.35s ease,
+      visibility 0.35s ease;
+  }
+
+  .experience-popup.is-visible {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .experience-popup-card {
+    width: min(430px, 92vw);
+
+    padding: 28px 22px 24px;
+
+    text-align: center;
+
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    border-radius: 22px;
+
+    background:
+      linear-gradient(
+        145deg,
+        rgba(20, 70, 48, 0.90),
+        rgba(12, 35, 29, 0.88)
+      );
+
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    box-shadow:
+      0 20px 60px rgba(0, 0, 0, 0.45),
+      inset 0 1px 0 rgba(255, 255, 255, 0.15);
+
+    transform: translateY(18px) scale(0.96);
+
+    transition:
+      transform 0.4s cubic-bezier(.2,.8,.2,1);
+  }
+
+  .experience-popup.is-visible .experience-popup-card {
+    transform: translateY(0) scale(1);
+  }
+
+  .experience-popup-icon {
+    font-size: 42px;
+    line-height: 1;
+    margin-bottom: 14px;
+
+    filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.25));
+  }
+
+  .experience-popup-card h2 {
+    margin: 0 0 12px;
+
+    color: #ffffff;
+
+    font-size: clamp(21px, 6vw, 28px);
+    font-weight: 700;
+
+    letter-spacing: 0.02em;
+  }
+
+  .experience-popup-card p {
+    margin: 0 auto 22px;
+
+    max-width: 360px;
+
+    color: rgba(255, 255, 255, 0.90);
+
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  .experience-popup-card strong {
+    color: #ffffff;
+  }
+
+  .experience-popup-card button {
+    width: 100%;
+    min-height: 48px;
+
+    padding: 12px 18px;
+
+    border: 1px solid rgba(255, 255, 255, 0.30);
+    border-radius: 13px;
+
+    background: rgba(255, 255, 255, 0.13);
+
+    color: #ffffff;
+
+    font-size: 15px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    box-shadow:
+      0 8px 22px rgba(0, 0, 0, 0.20);
+
+    transition:
+      background 0.2s ease,
+      transform 0.2s ease;
+  }
+
+  .experience-popup-card button:active {
+    transform: scale(0.97);
+  }
+
+  .experience-popup-card button:hover {
+    background: rgba(255, 255, 255, 0.20);
+  }
+}
