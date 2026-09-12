@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#8b5a35">
+  <title>3D Flip Card Memory Game</title>
+  <link rel="stylesheet" href="./css/memory-game.css">
+</head>
+<body>
+  <div id="memory-game" class="memory-game">
+
+    <section id="memory-start" class="memory-page memory-start">
+      <div class="start-orb" aria-hidden="true">★</div>
+      <div class="memory-start-card">
+        <p class="eyebrow">3D MEMORY CHALLENGE</p>
+        <h1>Flip Card Memory Game</h1>
+        <p class="start-copy">Flip the colorful cards and find every matching pair.</p>
+
+        <label for="memory-grid-size">Choose grid size</label>
+        <select id="memory-grid-size">
+          <option value="2">2 × 2</option>
+          <option value="4" selected>4 × 4</option>
+          <option value="6">6 × 6</option>
+          <option value="8">8 × 8</option>
+        </select>
+
+        <button id="memory-play" class="memory-main-btn" type="button">
+          <span class="btn-icon">▶</span>
+          <span>Start Game</span>
+        </button>
+      </div>
+    </section>
+
+    <section id="memory-game-page" class="memory-page memory-game-page is-hidden">
+      <header class="memory-header">
+        <button id="memory-home" class="memory-icon-btn" type="button" aria-label="Return to main page" title="Return to main page">⌂</button>
+
+        <div class="memory-title">
+          <span>MEMORY</span>
+          <strong>Match & Flip</strong>
+        </div>
+
+        <div class="memory-stats">
+          <div class="memory-stat"><span>Pairs</span><b id="memory-pairs">0</b></div>
+          <div class="memory-stat"><span>Moves</span><b id="memory-moves">0</b></div>
+          <div class="memory-stat"><span>Time</span><b id="memory-time">00:00</b></div>
+        </div>
+
+        <button id="memory-pause" class="memory-icon-btn pause-btn" type="button" aria-label="Pause game" title="Pause game">Ⅱ</button>
+      </header>
+
+      <main id="memory-grid" class="memory-grid" aria-label="Memory cards"></main>
+
+      <div class="memory-progress-wrap" aria-label="Game progress">
+        <div id="memory-progress" class="memory-progress"></div>
+      </div>
+    </section>
+
+    <div id="memory-pause-modal" class="memory-modal is-hidden" role="dialog" aria-modal="true" aria-labelledby="pause-title">
+      <div class="memory-modal-card">
+        <div class="modal-badge">Ⅱ</div>
+        <h2 id="pause-title">Game Paused</h2>
+        <p>Take a breath. Your time is safely paused.</p>
+        <button id="memory-resume" class="memory-btn" type="button">Resume Game</button>
+        <button id="memory-restart-pause" class="memory-btn secondary" type="button">Restart</button>
+        <button id="memory-quit-pause" class="memory-btn danger" type="button">Quit Game</button>
+      </div>
+    </div>
+
+    <div id="memory-toast" class="memory-toast is-hidden" role="status">
+      <span class="toast-check">✓</span>
+      <span>Pair Found!</span>
+    </div>
+
+    <div id="memory-win-modal" class="memory-modal is-hidden" role="dialog" aria-modal="true" aria-labelledby="win-title">
+      <div class="memory-modal-card win-card">
+        <div class="modal-badge trophy">★</div>
+        <h2 id="win-title">You Won!</h2>
+        <p id="memory-result"></p>
+        <button id="memory-new-game" class="memory-btn" type="button">Play Again</button>
+        <button id="memory-home-win" class="memory-btn secondary" type="button">Return to Main Page</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="./js/memory-game.js"></script>
+</body>
+</html>
