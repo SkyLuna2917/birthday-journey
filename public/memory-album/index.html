@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, viewport-fit=cover"
+  >
+
+  <title>Photo Memories</title>
+
+  <link rel="stylesheet" href="css/photo-card.css">
+</head>
+
+<body>
+
+  <main class="app">
+
+    <div class="photo-page">
+
+      <!-- TOP BAR -->
+      <header class="topbar">
+
+        <div class="brand">
+          PHOTO MEMORIES
+        </div>
+
+        <span
+          id="count"
+          class="counter"
+          aria-live="polite"
+        >
+          1 / 5
+        </span>
+
+      </header>
+
+
+      <!-- MEMORY VIEWER -->
+      <section
+        class="viewer"
+        aria-label="Photo Memories viewer"
+      >
+
+        <!-- IMAGE / VIDEO FRAME -->
+        <div
+          class="frame"
+          id="frame"
+        >
+
+          <img
+            id="photo"
+            src=""
+            alt=""
+          >
+
+          <video
+            id="video"
+            playsinline
+            webkit-playsinline
+            preload="metadata"
+          ></video>
+
+        </div>
+
+
+        <!-- PREVIOUS / NEXT -->
+        <div
+          class="controls"
+          aria-label="Memory navigation"
+        >
+
+          <button
+            id="prev"
+            type="button"
+            aria-label="Previous memory"
+          >
+            ‹
+          </button>
+
+          <button
+            id="next"
+            type="button"
+            aria-label="Next memory"
+          >
+            ›
+          </button>
+
+        </div>
+
+
+        <!-- MESSAGE -->
+        <div class="message">
+
+          <i aria-hidden="true"></i>
+
+          <p id="msg">
+            Your memory message will appear here.
+          </p>
+
+        </div>
+
+
+        <!-- MEMORY DOTS -->
+        <div
+          class="dots"
+          id="dots"
+          aria-label="Choose memory"
+        ></div>
+
+      </section>
+
+    </div>
+
+  </main>
+
+
+  <!-- MEMORY ALBUM JAVASCRIPT -->
+  <script src="js/photo-card.js"></script>
+
+</body>
+
+</html>
