@@ -1,0 +1,567 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  font-family: Georgia, "Times New Roman", serif;
+  color: #fff;
+  background: transparent;
+}
+
+body {
+  min-height: 100dvh;
+  background: transparent;
+  overflow: hidden;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+}
+
+button:focus-visible {
+  outline: 3px solid #ffd86b;
+  outline-offset: 3px;
+}
+
+.congratulatory-overlay {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-items: center;
+  background: transparent;
+  overflow: hidden;
+}
+
+.ancient-book-scene {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: clamp(42px, 6vh, 64px) 20px 24px;
+  overflow: hidden;
+}
+
+.book-title {
+  font-size: clamp(12px, 1.7vw, 17px);
+  font-weight: 800;
+  letter-spacing: .22em;
+  text-align: center;
+  color: #ffe9b7;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, .45);
+  flex: none;
+}
+
+.ancient-book {
+  position: relative;
+  width: min(920px, 94vw);
+  height: min(590px, 74dvh);
+  max-height: 74dvh;
+  flex: none;
+  perspective: 1600px;
+}
+
+.book-spread {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  opacity: 0;
+  visibility: hidden;
+  transform: rotateY(-8deg) scale(.98);
+  transform-origin: center;
+  transition:
+    opacity .22s ease,
+    transform .35s ease,
+    visibility .22s ease;
+}
+
+.book-spread.active {
+  opacity: 1;
+  visibility: visible;
+  transform: rotateY(0) scale(1);
+  z-index: 2;
+}
+
+.book-page {
+  position: relative;
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
+  padding: clamp(22px, 3.2vw, 42px);
+  background:
+    linear-gradient(
+      145deg,
+      rgba(112, 79, 48, .97),
+      rgba(61, 40, 25, .97)
+    );
+  border: 1px solid rgba(255, 232, 184, .26);
+  box-shadow:
+    inset 0 0 50px rgba(24, 12, 5, .20);
+}
+
+.book-page-left {
+  border-radius: 20px 0 0 20px;
+  border-right: 1px solid rgba(255, 225, 170, .25);
+}
+
+.book-page-right {
+  border-radius: 0 20px 20px 0;
+  border-left: 1px solid rgba(30, 15, 7, .3);
+}
+
+.book-page:before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(
+      circle at 15% 18%,
+      rgba(255, 239, 196, .16),
+      transparent 27%
+    ),
+    radial-gradient(
+      circle at 84% 82%,
+      rgba(20, 8, 2, .14),
+      transparent 30%
+    );
+}
+
+.page-decoration {
+  position: absolute;
+  inset: 12px;
+  border: 1px solid rgba(255, 229, 180, .18);
+  border-radius: 13px;
+  pointer-events: none;
+}
+
+.memory-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.memory-photo {
+  position: relative;
+  width: min(82%, 360px);
+  height: min(68%, 390px);
+  padding: 8px;
+  background: rgba(255, 242, 207, .92);
+  box-shadow: 0 18px 28px rgba(25, 10, 3, .34);
+  transform: rotate(-1.5deg);
+}
+
+.memory-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  background: #6b5037;
+}
+
+.photo-tape {
+  position: absolute;
+  width: 82px;
+  height: 20px;
+  background: rgba(237, 215, 160, .78);
+  z-index: 2;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, .12);
+}
+
+.photo-tape-top {
+  top: -8px;
+  left: 50%;
+  transform: translateX(-50%) rotate(-2deg);
+}
+
+.photo-tape-bottom {
+  bottom: -7px;
+  left: 50%;
+  transform: translateX(-50%) rotate(2deg);
+}
+
+.photo-caption {
+  font-size: clamp(15px, 2vw, 21px);
+  font-weight: 700;
+  color: #ffe7b2;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, .35);
+}
+
+.photo-caption span {
+  color: #ffbd65;
+  margin-left: 4px;
+}
+
+.page-number {
+  position: absolute;
+  bottom: 18px;
+  color: rgba(255, 235, 194, .72);
+  font-size: 12px;
+  letter-spacing: .16em;
+}
+
+.left-number {
+  left: 25px;
+}
+
+.right-number {
+  right: 25px;
+}
+
+.letter-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ==========================================
+   MESSAGE AREA
+   ========================================== */
+
+.message-writing-area {
+  width: 88%;
+  max-height: 80%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 13px;
+  color: #fff1cf;
+  text-align: left;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, .35);
+
+  /*
+    Keep normal words together.
+    The browser may move the whole word to
+    the next line, but it will not split the
+    word in the middle.
+  */
+  overflow-wrap: normal;
+  word-break: normal;
+  hyphens: none;
+}
+
+/* ==========================================
+   MESSAGE LINES
+   ========================================== */
+
+.message-line {
+  font-size: clamp(13px, 1.65vw, 17px);
+  line-height: 1.45;
+  font-weight: 500;
+
+  /*
+    Never break a word into pieces.
+  */
+  overflow-wrap: normal;
+  word-break: normal;
+  hyphens: none;
+}
+
+.message-line:first-child {
+  font-size: clamp(18px, 2.3vw, 25px);
+  font-weight: 700;
+  color: #ffe4a6;
+  margin-bottom: 4px;
+}
+
+.message-signature {
+  font-style: italic;
+  color: #ffd991;
+  font-weight: 700;
+  margin-top: 5px;
+}
+
+/* ==========================================
+   IMPORTANT:
+   CHARACTER ANIMATION WITHOUT WORD BREAKING
+   ========================================== */
+
+.writing-char {
+  opacity: 0;
+  transform: translateY(3px);
+  transition:
+    opacity .08s ease,
+    transform .08s ease;
+
+  /*
+    Keep each generated character visually inline.
+  */
+  display: inline;
+
+  /*
+    Do NOT allow whitespace/character-level
+    wrapping to split words.
+  */
+}
+
+.writing-char.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+/* ==========================================
+   NAVIGATION
+   ========================================== */
+
+.book-navigation {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  z-index: 10;
+  flex: none;
+}
+
+.book-navigation button {
+  width: 44px;
+  height: 40px;
+  border: 1px solid rgba(255, 255, 255, .28);
+  border-radius: 12px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(110, 75, 50, .86),
+      rgba(62, 40, 26, .86)
+    );
+
+  box-shadow:
+    0 4px 0 rgba(42, 26, 16, .75),
+    0 8px 15px rgba(0, 0, 0, .2),
+    inset 0 1px 0 rgba(255, 255, 255, .18);
+
+  font-size: 30px;
+  line-height: 1;
+
+  transition: .15s ease;
+}
+
+.book-navigation button:hover:not(:disabled) {
+  transform: translateY(-2px);
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 201, 67, .94),
+      rgba(224, 112, 28, .94)
+    );
+}
+
+.book-navigation button:active:not(:disabled) {
+  transform: translateY(2px);
+  box-shadow:
+    0 2px 0 rgba(42, 26, 16, .75);
+}
+
+.book-navigation button:disabled {
+  opacity: .35;
+  cursor: not-allowed;
+}
+
+#bookPageIndicator {
+  min-width: 58px;
+  text-align: center;
+  font: 700 13px Arial, sans-serif;
+  color: #ffe7b0;
+}
+
+.swipe-hint {
+  font: 11px Arial, sans-serif;
+  letter-spacing: .08em;
+  color: rgba(255, 255, 255, .58);
+  text-align: center;
+  flex: none;
+}
+
+
+/* ==========================================
+   CLOSE BUTTON
+   ========================================== */
+
+.congratulatory-close {
+  position: fixed;
+  top: 12px;
+  right: 12px;
+  z-index: 100;
+
+  width: 42px;
+  height: 42px;
+
+  border: 1px solid rgba(255, 255, 255, .3);
+  border-radius: 50%;
+
+  background: rgba(30, 20, 15, .78);
+
+  box-shadow:
+    0 8px 18px rgba(0, 0, 0, .28);
+
+  backdrop-filter: blur(7px);
+  -webkit-backdrop-filter: blur(7px);
+
+  font-size: 27px;
+  line-height: 1;
+}
+
+.congratulatory-close:hover {
+  background: rgba(255, 185, 60, .92);
+}
+
+
+/* ==========================================
+   TABLET / MOBILE
+   ========================================== */
+
+@media (max-width: 700px) {
+
+  .ancient-book-scene {
+    padding: 44px 10px 12px;
+    gap: 7px;
+  }
+
+  .ancient-book {
+    width: 96vw;
+    height: min(540px, 68dvh);
+    max-height: 68dvh;
+  }
+
+  .book-page {
+    padding: 17px 13px;
+  }
+
+  .page-decoration {
+    inset: 7px;
+  }
+
+  .memory-photo {
+    width: 88%;
+    height: 64%;
+    padding: 5px;
+  }
+
+  .photo-tape {
+    width: 60px;
+    height: 15px;
+  }
+
+  .message-writing-area {
+    width: 92%;
+    gap: 8px;
+
+    overflow-wrap: normal;
+    word-break: normal;
+    hyphens: none;
+  }
+
+  .message-line {
+    font-size: clamp(10px, 2.7vw, 14px);
+    line-height: 1.3;
+
+    overflow-wrap: normal;
+    word-break: normal;
+    hyphens: none;
+  }
+
+  .message-line:first-child {
+    font-size: clamp(15px, 4vw, 20px);
+  }
+
+  .page-number {
+    bottom: 11px;
+    font-size: 9px;
+  }
+
+  .left-number {
+    left: 15px;
+  }
+
+  .right-number {
+    right: 15px;
+  }
+
+  .book-navigation {
+    gap: 10px;
+  }
+
+  .book-navigation button {
+    width: 40px;
+    height: 37px;
+    font-size: 26px;
+  }
+
+  .swipe-hint {
+    font-size: 9px;
+  }
+}
+
+
+/* ==========================================
+   SMALL PHONES
+   ========================================== */
+
+@media (max-width: 480px) {
+
+  .ancient-book {
+    height: 64dvh;
+    max-height: 64dvh;
+  }
+
+  .book-page-left {
+    border-radius: 14px 0 0 14px;
+  }
+
+  .book-page-right {
+    border-radius: 0 14px 14px 0;
+  }
+
+  .memory-photo {
+    height: 58%;
+  }
+
+  .photo-caption {
+    font-size: 12px;
+  }
+
+  .message-line {
+    font-size: 9.5px;
+    line-height: 1.25;
+
+    overflow-wrap: normal;
+    word-break: normal;
+    hyphens: none;
+  }
+
+  .message-line:first-child {
+    font-size: 15px;
+  }
+
+  .message-writing-area {
+    gap: 6px;
+  }
+
+  .book-title {
+    font-size: 10px;
+  }
+
+  .congratulatory-close {
+    width: 36px;
+    height: 36px;
+    font-size: 24px;
+    top: 7px;
+    right: 7px;
+  }
+}

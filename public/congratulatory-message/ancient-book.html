@@ -1,0 +1,277 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+  >
+
+  <title>Birthday Journey — Congratulatory Message</title>
+
+  <link rel="stylesheet" href="./ancient-book.css">
+</head>
+
+<body>
+
+  <main
+    id="congratulatoryOverlay"
+    class="congratulatory-overlay active"
+    aria-hidden="false"
+  >
+
+    <!-- CLOSE BUTTON -->
+    <button
+      id="closeCongratulatory"
+      class="congratulatory-close"
+      type="button"
+      aria-label="Close congratulatory message"
+    >
+      ×
+    </button>
+
+
+    <!-- ANCIENT BOOK SCENE -->
+    <div class="ancient-book-scene">
+
+      <div class="book-title">
+        A LITTLE BIRTHDAY STORY
+      </div>
+
+
+      <!-- BOOK -->
+      <div
+        class="ancient-book"
+        data-book-page="1"
+      >
+
+        <!-- =========================
+             SPREAD 1
+        ========================== -->
+        <div
+          class="book-spread active"
+          data-spread="1"
+          aria-hidden="false"
+        >
+
+          <!-- LEFT PAGE -->
+          <div class="book-page book-page-left memory-page">
+
+            <div class="page-decoration"></div>
+
+            <div class="memory-photo">
+
+              <div class="photo-tape photo-tape-top"></div>
+              <div class="photo-tape photo-tape-bottom"></div>
+
+              <img
+                src="./book/page1-dudu-bubu.png"
+                alt="A special birthday memory"
+              >
+
+            </div>
+
+            <div class="photo-caption">
+              Dudu &amp; Bubu <span>♥</span>
+            </div>
+
+            <div class="page-number left-number">
+              01
+            </div>
+
+          </div>
+
+
+          <!-- RIGHT PAGE -->
+          <div class="book-page book-page-right letter-page">
+
+            <div class="page-decoration"></div>
+
+            <div
+              id="messageWritingArea1"
+              class="message-writing-area"
+            >
+              <div class="message-text"></div>
+            </div>
+
+            <div class="page-number right-number">
+              01
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- =========================
+             SPREAD 2
+        ========================== -->
+        <div
+          class="book-spread"
+          data-spread="2"
+          aria-hidden="true"
+        >
+
+          <!-- LEFT PAGE -->
+          <div class="book-page book-page-left memory-page">
+
+            <div class="page-decoration"></div>
+
+            <div class="memory-photo">
+
+              <div class="photo-tape photo-tape-top"></div>
+              <div class="photo-tape photo-tape-bottom"></div>
+
+              <img
+                src="./book/page2-dudu-bubu.jpg"
+                alt="Another beautiful birthday memory"
+              >
+
+            </div>
+
+            <div class="photo-caption">
+              Tiny moments <span>♥</span>
+            </div>
+
+            <div class="page-number left-number">
+              02
+            </div>
+
+          </div>
+
+
+          <!-- RIGHT PAGE -->
+          <div class="book-page book-page-right letter-page">
+
+            <div class="page-decoration"></div>
+
+            <div
+              id="messageWritingArea2"
+              class="message-writing-area"
+            >
+              <div class="message-text"></div>
+            </div>
+
+            <div class="page-number right-number">
+              02
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- =========================
+             SPREAD 3
+        ========================== -->
+        <div
+          class="book-spread"
+          data-spread="3"
+          aria-hidden="true"
+        >
+
+          <!-- LEFT PAGE -->
+          <div class="book-page book-page-left memory-page">
+
+            <div class="page-decoration"></div>
+
+            <div class="memory-photo">
+
+              <div class="photo-tape photo-tape-top"></div>
+              <div class="photo-tape photo-tape-bottom"></div>
+
+              <img
+                src="./book/IMG-20201228-WA0005.jpg"
+                alt="A memory for the next chapter"
+              >
+
+            </div>
+
+            <div class="photo-caption">
+              More memories to come <span>♥</span>
+            </div>
+
+            <div class="page-number left-number">
+              03
+            </div>
+
+          </div>
+
+
+          <!-- RIGHT PAGE -->
+          <div class="book-page book-page-right letter-page">
+
+            <div class="page-decoration"></div>
+
+            <div
+              id="messageWritingArea3"
+              class="message-writing-area"
+            >
+              <div class="message-text"></div>
+            </div>
+
+            <div class="page-number right-number">
+              03
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- BOOK NAVIGATION -->
+      <div
+        class="book-navigation"
+        aria-label="Book navigation"
+      >
+
+        <button
+          id="bookPrevious"
+          type="button"
+          disabled
+          aria-label="Previous page"
+        >
+          ‹
+        </button>
+
+        <span
+          id="bookPageIndicator"
+          aria-live="polite"
+        >
+          1 / 3
+        </span>
+
+        <button
+          id="bookNext"
+          type="button"
+          aria-label="Next page"
+        >
+          ›
+        </button>
+
+      </div>
+
+
+      <!-- SWIPE HINT -->
+      <div class="swipe-hint">
+        Swipe or use ← → to turn the pages
+      </div>
+
+    </div>
+
+  </main>
+
+
+  <!-- ANCIENT BOOK JAVASCRIPT -->
+  <script
+    type="module"
+    src="./ancient-book.js"
+  ></script>
+
+</body>
+
+</html>
