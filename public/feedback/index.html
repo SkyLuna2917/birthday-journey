@@ -1,0 +1,280 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="description"
+    content="Share your feedback about Birthday Journey."
+  >
+
+  <title>Feedback | Birthday Journey</title>
+
+  <link rel="stylesheet" href="./css/feedback.css">
+</head>
+
+<body>
+
+  <!-- ==========================================
+       BACKGROUND VIDEO
+  =========================================== -->
+  <video
+    class="feedback-background-video"
+    autoplay
+    muted
+    loop
+    playsinline
+    preload="auto"
+    aria-hidden="true"
+  >
+    <source
+      src="./assets/feedback.mp4"
+      type="video/mp4"
+    >
+  </video>
+
+  <div
+    class="feedback-video-overlay"
+    aria-hidden="true"
+  ></div>
+
+
+  <!-- ==========================================
+       FEEDBACK PAGE
+  =========================================== -->
+  <main class="feedback-page">
+
+    <section class="feedback-card">
+
+      <!-- HEADER -->
+      <div class="feedback-header">
+
+        <div class="feedback-icon">
+          💬
+        </div>
+
+        <h1>
+          Share Your Feedback
+        </h1>
+
+        <p>
+          We would love to hear what you think about
+          <strong>Birthday Journey</strong>.
+        </p>
+
+      </div>
+
+
+      <!-- ========================================
+           FEEDBACK FORM
+      ========================================= -->
+      <form
+        id="feedbackForm"
+        novalidate
+      >
+
+        <!-- Web3Forms Access Key -->
+        <input
+          type="hidden"
+          name="access_key"
+          value="7e1790ce-a43a-49be-8246-d9ec686dc539"
+        >
+
+        <!-- Email Subject -->
+        <input
+          type="hidden"
+          name="subject"
+          value="New Feedback - Birthday Journey"
+        >
+
+        <!-- Sender Name -->
+        <input
+          type="hidden"
+          name="from_name"
+          value="Birthday Journey"
+        >
+
+        <!-- Spam Protection -->
+        <input
+          type="checkbox"
+          name="botcheck"
+          tabindex="-1"
+          autocomplete="off"
+          style="display:none"
+        >
+
+
+        <!-- ======================================
+             NAME
+        ======================================= -->
+        <div class="form-group">
+
+          <label for="name">
+            Name <span>*</span>
+          </label>
+
+          <input
+            type="text"
+            id="name"
+            name="name"
+            placeholder="Enter your name"
+            autocomplete="name"
+            required
+          >
+
+          <small
+            class="error-message"
+            id="nameError"
+          ></small>
+
+        </div>
+
+
+        <!-- ======================================
+             EMAIL
+        ======================================= -->
+        <div class="form-group">
+
+          <label for="email">
+            Gmail <span>*</span>
+          </label>
+
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="example@gmail.com"
+            autocomplete="email"
+            required
+          >
+
+          <small
+            class="error-message"
+            id="emailError"
+          ></small>
+
+        </div>
+
+
+        <!-- ======================================
+             FEEDBACK
+        ======================================= -->
+        <div class="form-group">
+
+          <label for="feedback">
+            Your Feedback <span>*</span>
+          </label>
+
+          <textarea
+            id="feedback"
+            name="message"
+            rows="6"
+            placeholder="Write your feedback here..."
+            required
+          ></textarea>
+
+          <small
+            class="error-message"
+            id="feedbackError"
+          ></small>
+
+        </div>
+
+
+        <!-- ======================================
+             SUBMIT BUTTON
+        ======================================= -->
+        <button
+          type="submit"
+          class="submit-btn"
+          id="submitFeedback"
+        >
+          <span>✉️</span>
+          Send Feedback
+        </button>
+
+      </form>
+
+
+      <!-- ========================================
+           SUCCESS MESSAGE
+      ========================================= -->
+      <div
+        class="success-message"
+        id="successMessage"
+        role="status"
+        aria-live="polite"
+        hidden
+      >
+
+        <div class="success-icon">
+          ✓
+        </div>
+
+        <h2>
+          Thank You!
+        </h2>
+
+        <p>
+          Your feedback has been sent successfully.
+        </p>
+
+      </div>
+
+
+      <!-- ========================================
+           BACK BUTTON
+      ========================================= -->
+      <a
+        href="/"
+        class="back-btn"
+      >
+        ← Back
+      </a>
+
+    </section>
+
+  </main>
+
+
+  <!-- ==========================================
+       JAVASCRIPT
+  =========================================== -->
+  <script src="./js/feedback.js"></script>
+
+</body>
+
+</html>
+```
+
+### What we fixed in HTML
+
+1. **Changed the access key** to your new key:
+   `7e1790ce-a43a-49be-8246-d9ec686dc539`
+
+2. Kept the existing IDs that your JavaScript depends on:
+
+   * `feedbackForm`
+   * `name`
+   * `email`
+   * `feedback`
+   * `submitFeedback`
+   * `successMessage`
+
+3. Kept your existing CSS class names so your current design isn't unnecessarily changed.
+
+4. Kept the background video and Back button.
+
+5. Kept the Web3Forms fields:
+   `access_key`, `subject`, `from_name`, `name`, `email`, and `message`. Your original HTML already had the correct field structure.
+
+**Do only this step now.** Save the HTML. Don't touch CSS or JS yet.
+
+Once you've replaced it, tell me **“HTML done”**, and we'll move to **Step 2: fix `feedback.css`** without touching anything else.
